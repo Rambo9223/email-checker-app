@@ -43,7 +43,7 @@ emailRouter.post(
   "/check",
   upload.single("file"),
   async (req: Request, res: Response<EmailApiResponse>) => {
-    console.log(req);
+    //console.log(req.headers);
     if (!req.file) {
       return res.status(400).json({ success: false, error: "No file uploaded" });
     }

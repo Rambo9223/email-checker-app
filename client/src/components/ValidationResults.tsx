@@ -12,6 +12,7 @@ interface ValidationResultsProps {
 }
 
 export function ValidationResults({ report, onReset }: ValidationResultsProps) {
+  console.log(report);
   return (
     <div className="results">
       <div className="results__header">

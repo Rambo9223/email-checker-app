@@ -19,6 +19,7 @@ function toAddr(name?: string, email?: string): EmailAddress | null {
 }
 
 export async function parseMsg(buffer: Buffer): Promise<ParsedEmail> {
+  //console.log(buffer)
   // MsgReader's types declare ArrayBuffer | DataView, not Buffer.
   // buffer.buffer is typed as ArrayBuffer | SharedArrayBuffer (ArrayBufferLike)
   // because TypeScript can't narrow Uint8Array.buffer further — but Node's
@@ -29,7 +30,13 @@ export async function parseMsg(buffer: Buffer): Promise<ParsedEmail> {
     buffer.byteOffset + buffer.byteLength
   ) as ArrayBuffer;
   const reader = new MsgReader(arrayBuffer);
+  //console.log(reader);
   const fileData = reader.getFileData();
+  
+
+  console.log(fileData)
+
+  // check the filedata object as key/value pairs are potentially different, hence creating the un retrevable body
 
   if (!fileData) {
     throw new Error("Failed to parse .msg file: getFileData() returned null");
@@ -39,6 +46,21 @@ export async function parseMsg(buffer: Buffer): Promise<ParsedEmail> {
   if (typeof content === "string") return Buffer.from(content, "base64");
   return Buffer.from(new Uint8Array(content));
 }
+
+  function toDecoder(content:Uint8Array<ArrayBufferLike>|string|null|undefined){
+    
+    
+    if(content===undefined||content===null||typeof(content)==="string"){
+      return "unavalable"
+    }
+    else{
+    const decoder = new TextDecoder()
+    const str = decoder.decode(content,{stream:true})
+    //console.log(str);
+    //console.log(typeof(str));
+    return str
+    }
+  }
 
   const from = toAddr(fileData.senderName, fileData.senderEmail);
 
@@ -55,7 +77,7 @@ export async function parseMsg(buffer: Buffer): Promise<ParsedEmail> {
     .flatMap((r) => (r.email ? [{ name: r.name ?? null, email: r.email }] : []));
 
   const bodyText = fileData.body ?? null;
-  const bodyHtml = fileData.bodyHtml ?? null;
+  const bodyHtml = toDecoder(fileData.html);
   const combinedText = [bodyText ?? "", bodyHtml ?? ""].join(" ");
 
   const attachments = (fileData.attachments ?? []).map((a) => {
@@ -63,12 +85,12 @@ export async function parseMsg(buffer: Buffer): Promise<ParsedEmail> {
     // `attachMimeTag` for the MIME type — not `content` / `mimeType`.
     const raw = a.body;
     const content = raw ? /*Buffer.from(new Uint8Array(raw)) */ toBuffer(raw): Buffer.alloc(0);
-    console.log(content);
+    //console.log(content);
     return {
       filename: a.fileName ?? null,
       contentType: a.attachMimeTag ?? "application/octet-stream",
-      size: content.byteLength,
-      contentId: null,
+      size: a.contentLength || "unavailable",
+      contentId: String(a.dataId) || null,
       contentDisposition: "attachment",
       content,
       contentBase64: content.toString("base64"),
@@ -83,7 +105,7 @@ export async function parseMsg(buffer: Buffer): Promise<ParsedEmail> {
   }
 
   return {
-    messageId: fileData.messageId ?? null,
+    messageId: fileData. messageId ?? null,
     subject: fileData.subject ?? null,
     date,
 

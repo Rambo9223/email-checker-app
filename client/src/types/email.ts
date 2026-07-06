@@ -97,14 +97,17 @@ export interface ValidationCheck {
 }
 
 export interface SenderValidationResult {
-  email: string;
-  isFormatValid: boolean;
-  isDomainValid: boolean | null;
-  isMxValid: boolean | null;
-  isDisposable: boolean | null;
-  isCatchAll: boolean | null;
-  score: number | null;
-  provider: string | null;
+  Address: string,
+  isFormatValid?: boolean;
+  catch_all:boolean|null,
+  Status:string,
+  Disposable_Domain:boolean | null,
+  Role_Based: boolean | null ,
+  Free_Domain: boolean | null,
+  GreyListed: boolean | null ,
+  Diagnosis: string
+  score?:number|null
+  provider: string | null;           // which API answered
   raw: unknown;
 }
 

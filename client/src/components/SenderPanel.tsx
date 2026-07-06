@@ -28,7 +28,8 @@ export function SenderPanel({ sender }: SenderPanelProps) {
 
   return (
     <div className="sender-panel">
-      <h3 className="panel-heading">Sender — {sender.email}</h3>
+      <h3 className="panel-heading">Sender — {sender.Address}</h3>
+      
 
       {sender.score !== null && (
         <div className="sender-panel__score">
@@ -44,11 +45,13 @@ export function SenderPanel({ sender }: SenderPanelProps) {
       )}
 
       <div className="sender-panel__grid">
-        <BoolBadge value={sender.isFormatValid} label="Valid format" />
-        <BoolBadge value={sender.isDomainValid} label="Domain resolves" />
-        <BoolBadge value={sender.isMxValid} label="MX record found" />
-        <BoolBadge value={sender.isDisposable} label="Disposable" />
-        <BoolBadge value={sender.isCatchAll} label="Catch-all domain" />
+        <BoolBadge value={sender.isFormatValid?sender.isFormatValid:false} label="Valid format" />
+        <BoolBadge value={sender.catch_all} label="Catch-all domain" />
+        <BoolBadge value={sender.Disposable_Domain} label="Disposable Domain" />
+        <BoolBadge value={sender.Role_Based} label="Role Based" />
+        <BoolBadge value={sender.Free_Domain} label="Free Domain" />
+        <BoolBadge value={sender.GreyListed} label="GreyListed" />
+        {/*Add Diagnosis result div , also add info badges to Boolbadges to explain each parameter */}
       </div>
 
       <p className="panel-footnote">

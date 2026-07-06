@@ -121,13 +121,24 @@ export interface ValidationCheck {
 }
 
 export interface SenderValidationResult {
-  email: string;
+  Address: string,
+  isFormatValid?: boolean;
+  catch_all:boolean|null,
+  Status:string,
+  Disposable_Domain:boolean | null,
+  Role_Based: boolean | null ,
+  Free_Domain: boolean | null,
+  GreyListed: boolean | null ,
+  Diagnosis: string
+  /*
   isFormatValid: boolean;
   isDomainValid: boolean | null;     // null = not checked
   isMxValid: boolean | null;
   isDisposable: boolean | null;
   isCatchAll: boolean | null;
   score: number | null;              // 0–100 from external API, if available
+  */
+  score?:number| null,
   provider: string | null;           // which API answered
   raw: unknown;
 }
