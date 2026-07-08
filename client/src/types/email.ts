@@ -106,13 +106,13 @@ export interface SenderValidationResult {
   Free_Domain: boolean | null,
   GreyListed: boolean | null ,
   Diagnosis: string
-  score?:number|null
+  score:number|null
   provider: string | null;           // which API answered
   raw: unknown;
 }
 
 export interface ContentValidationResult {
-  spamScore: number | null;
+  spamScore: string | null;
   spamThreshold: number | null;
   isSpam: boolean | null;
   rules: Array<{ name: string; score: number; description: string }>;

@@ -7,33 +7,11 @@ import { scoreGenerator } from "../utils/scoreGenerator";
 
 // New - 
 
-/*
-// ─── Provider: Abstract API ───────────────────────────────────────────────────
-// Docs: https://www.abstractapi.com/api/email-verification-validation-api
-// Set ABSTRACT_API_KEY in your .env to enable.
 
-async function validateWithAbstractApi(email: string): Promise<SenderValidationResult> {
-  const apiKey = process.env.ABSTRACT_API_KEY;
-  if (!apiKey) throw new Error("ABSTRACT_API_KEY not set");
+// ─── Provider: My Email Verifer ───────────────────────────────────────────────────
+// Docs: https://client.myemailverifier.com/apis/settings
+// Set MY_EMAIL_VERIFIER_KEY_API_KEY in your .env to enable.
 
-  const { data } = await axios.get("https://emailvalidation.abstractapi.com/v1/", {
-    params: { api_key: apiKey, email },
-    timeout: 8000,
-  });
-
-  return {
-    email,
-    isFormatValid: data.is_valid_format?.value ?? false,
-    isDomainValid: data.is_mx_found?.value ?? null,
-    isMxValid: data.is_mx_found?.value ?? null,
-    isDisposable: data.is_disposable_email?.value ?? null,
-    isCatchAll: data.is_catchall_email?.value ?? null,
-    score: data.quality_score != null ? Math.round(data.quality_score * 100) : null,
-    provider: "AbstractAPI",
-    raw: data,
-  };
-}
-*/
 
 async function validateWithMyEmailVerifier(email: string): Promise<SenderValidationResult> {
   const apiKey = process.env.MY_EMAIL_VERIFIER_KEY;
@@ -43,20 +21,11 @@ async function validateWithMyEmailVerifier(email: string): Promise<SenderValidat
     //params: { api_key: apiKey, email },
     timeout: 10000,
   });
-  console.log(data);
+  //console.log(data);
 
 
   return {
 
-    /*
-    email,
-    isFormatValid: data.is_valid_format?.value ?? false,
-    isDomainValid: data.is_mx_found?.value ?? null,
-    isMxValid: data.is_mx_found?.value ?? null,
-    isDisposable: data.is_disposable_email?.value ?? null,
-    isCatchAll: data.is_catchall_email?.value ?? null,
-    //score: data.quality_score != null ? Math.round(data.quality_score * 100) : null,
-    */
     Address:data.Address,
     catch_all:data.catch_all,
     Status:data.Status,

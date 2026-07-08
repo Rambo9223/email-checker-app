@@ -5,6 +5,7 @@ interface ContentPanelProps {
 }
 
 export function ContentPanel({ content }: ContentPanelProps) {
+  console.log(content);
   if (!content) {
     return (
       <div className="content-panel">
@@ -21,9 +22,9 @@ export function ContentPanel({ content }: ContentPanelProps) {
       <h3 className="panel-heading">Content</h3>
 
       <div className={`content-panel__score content-panel__score--${status}`}>
-        <span className="content-panel__score-value">{/* Crash from spamScore,  content.spamScore?.toFixed(1) ?? "—"*/}</span>
+        <span className="content-panel__score-value">{content.spamScore ?? "—"}</span>
         <span className="content-panel__score-threshold">
-          / {/*content.spamThreshold?.toFixed(1) ?? "—"*/} threshold
+          / {content.spamThreshold?.toFixed(1) ?? "—"} threshold
         </span>
       </div>
 

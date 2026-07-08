@@ -11,9 +11,9 @@ const DEDUCTIONS = {
   catchAll: 10,
 } as const;
 
-export function scoreGenerator(result: SenderValidationResult): number {
+export function scoreGenerator(result: SenderValidationResult): number | null {
   // Provider fallback — no real data available
-  if (result.provider === "local-format-check") return 0;
+  if (result.provider === "local-format-check") return null;
 
   let score = 100;
   const deductions: Array<{ reason: string; points: number }> = [];
