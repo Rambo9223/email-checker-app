@@ -1,14 +1,41 @@
 import type { SenderValidationResult } from "../types/email";
+import { QuestionMarkIcon } from "../assets/icons";
+import { senderValidationInfo } from "../utils/senderValidationInfo";
 
 interface SenderPanelProps {
   sender: SenderValidationResult | null;
 }
 
-function BoolBadge({ value, label }: { value: boolean | null; label: string }) {
+// Keys of senderValidationInfo that have tooltip text
+type TooltipKey = keyof typeof senderValidationInfo;
+
+function BoolBadge({
+  value,
+  label,
+  tooltipKey,
+}: {
+  value: boolean | null;
+  label: string;
+  tooltipKey?: TooltipKey;
+}) {
   const state = value === null ? "unknown" : value ? "yes" : "no";
   return (
     <div className={`bool-badge bool-badge--${state}`}>
-      <span className="bool-badge__label">{label}</span>
+      <span className="bool-badge__label">
+        {label}
+        {tooltipKey && (
+          <span className="tooltip-anchor">
+            <QuestionMarkIcon
+              height="12"
+              width="12"
+              className="bi bi-question-circle tooltip-anchor__icon"
+            />
+            <div className="tooltip-box" role="tooltip">
+              {senderValidationInfo[tooltipKey]}
+            </div>
+          </span>
+        )}
+      </span>
       <span className="bool-badge__value">
         {value === null ? "Not checked" : value ? "Yes" : "No"}
       </span>
@@ -16,23 +43,32 @@ function BoolBadge({ value, label }: { value: boolean | null; label: string }) {
   );
 }
 
-function TextBadge({value,label,score}:{
-  value:string ; label:string; score:number|null}){
+function TextBadge({
+  value,
+  label,
+  score,
+}: {
+  value: string;
+  label: string;
+  score: number | null;
+}) {
+  let state;
+  if (score === null) {
+    state = "unknown";
+  } else if (score > 65) {
+    state = "no";
+  } else {
+    state = "yes";
+  }
 
-  let state; 
-
-  // continue work on the interface and scoring system limit characters on response ... to show more
-
-  if(score===null){state="unknown"}
-  else if(score>65){state = "no"}
-  else{state="yes"}
-  
-  return (<div className={`bool-badge bool-badge--${state}`}>
+  return (
+    <div className={`bool-badge bool-badge--${state}`}>
       <span className="bool-badge__label">{label}</span>
       <span className="bool-badge__value">
-       {value}
+        {value.length < 40 ? value : `${value.substring(0, 40)}...`}
       </span>
-      </div>)
+    </div>
+  );
 }
 
 export function SenderPanel({ sender }: SenderPanelProps) {
@@ -48,8 +84,6 @@ export function SenderPanel({ sender }: SenderPanelProps) {
   return (
     <div className="sender-panel">
       <h3 className="panel-heading">Sender — {sender.Address}</h3>
-      
-     
 
       {sender.score !== null && (
         <div className="sender-panel__score">
@@ -65,15 +99,22 @@ export function SenderPanel({ sender }: SenderPanelProps) {
       )}
 
       <div className="sender-panel__grid">
-        <TextBadge score={sender.score} value={sender.Diagnosis} label="Diagnosis"/>
-        <BoolBadge value={sender.isFormatValid?sender.isFormatValid:false} label="Valid format" />
-        <BoolBadge value={sender.catch_all} label="Catch-all domain" />
-        <BoolBadge value={sender.Disposable_Domain} label="Disposable Domain" />
-        <BoolBadge value={sender.Role_Based} label="Role Based" />
-        <BoolBadge value={sender.Free_Domain} label="Free Domain" />
-        <BoolBadge value={sender.GreyListed} label="GreyListed" />
-        <TextBadge score={sender.score} value={sender.Status} label="Status"/>
-        {/*Add Diagnosis result div , also add info badges to Boolbadges to explain each parameter */}
+        <TextBadge score={sender.score} value={sender.Diagnosis} label="Diagnosis" />
+        {sender.isFormatValid ? (
+          <BoolBadge
+            value={sender.isFormatValid}
+            label="Valid format"
+            tooltipKey="isFormatValid"
+          />
+        ) : (
+          <TextBadge score={sender.score} value={sender.Status} label="Valid Format" />
+        )}
+        <BoolBadge value={sender.catch_all}         label="Catch-all domain"   tooltipKey="catch_all" />
+        <BoolBadge value={sender.Disposable_Domain} label="Disposable Domain"  tooltipKey="Disposable_Domain" />
+        <BoolBadge value={sender.Role_Based}        label="Role Based"         tooltipKey="Role_Based" />
+        <BoolBadge value={sender.Free_Domain}       label="Free Domain"        tooltipKey="Free_Domain" />
+        <BoolBadge value={sender.GreyListed}        label="GreyListed"         tooltipKey="GreyListed" />
+        <TextBadge score={sender.score} value={sender.Status} label="Status" />
       </div>
 
       <p className="panel-footnote">

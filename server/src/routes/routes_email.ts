@@ -111,7 +111,7 @@ emailRouter.get("/health", (_req, res) => {
   res.json({
     ok: true,
     providers: {
-      senderValidation: !!process.env.ABSTRACT_API_KEY ? "AbstractAPI" : "local-format-only",
+      senderValidation: !!process.env.MY_EMAIL_VERIFIER_KEY ? "My Email Verifier" : "local-format-only",
       urlScanning: !!process.env.GOOGLE_SAFE_BROWSING_KEY ? "GoogleSafeBrowsing" : "disabled",
       contentSpam: "PostmarkSpamCheck (free)",
     },
