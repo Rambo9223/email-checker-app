@@ -87,7 +87,7 @@ export interface ParsedEmailTransport {
   parsedAt: string; // ISO string
 }
 
-export type ValidationStatus = "pass" | "fail" | "warn" | "unknown";
+export type ValidationStatus = string | "pass" | "fail" | "warn" | "unknown";
 
 export interface ValidationCheck {
   name: string;
@@ -115,7 +115,7 @@ export interface ContentValidationResult {
   spamScore: string | null;
   spamThreshold: number | null;
   isSpam: boolean | null;
-  rules: Array<{ name: string; score: number; description: string }>;
+  rules: Array<{ name?: string | undefined; score: number; description: string }>;
   provider: string | null;
   raw: unknown;
 }
