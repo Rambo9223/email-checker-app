@@ -9,6 +9,8 @@ import { InfoIcon } from "./assets/icons";
 // @ts-ignore: CSS module import declaration unavailable in this setup
 import "./App.css";
 
+/*To do, create vitest files for frontend and test for backend */
+
 export default function App() {
   const { state, checkEmail, reset } = useEmailChecker();
   const [disclaimerOpen, setDisclaimerOpen] = useState(false);
