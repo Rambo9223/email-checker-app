@@ -115,7 +115,7 @@ export interface ContentValidationResult {
   spamScore: string | null;
   spamThreshold: number | null;
   isSpam: boolean | null;
-  rules: Array<{ name?: string | undefined; score: number; description: string }>;
+  rules: Array<{ name?: string | undefined; score: string; description: string }>;
   provider: string | null;
   raw: unknown;
 }

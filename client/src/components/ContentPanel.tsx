@@ -5,7 +5,7 @@ interface ContentPanelProps {
 }
 
 export function ContentPanel({ content }: ContentPanelProps) {
-  console.log(content);
+  //console.log(content);
   if (!content) {
     return (
       <div className="content-panel">
