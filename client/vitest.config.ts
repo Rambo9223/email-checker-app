@@ -7,7 +7,7 @@ export default defineConfig({
     globals: true,
     setupFiles: "src/tests/setupTests.ts",
   },
-  
+  assetsInclude:["**/*.eml","**/*.msg"],
 });
 // ./setup-file.ts
 // add an import at the top of your setup file so TypeScript can pick up types

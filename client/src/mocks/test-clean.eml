@@ -1,0 +1,14 @@
+MIME-Version: 1.0
+Message-ID: <test-001@example.com>
+Date: Mon, 14 Jul 2025 10:00:00 +0000
+From: John Smith <john.smith@example.com>
+To: You <you@yourdomain.com>
+Subject: Test email - clean sender
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.yourdomain.com;
+  spf=pass smtp.mailfrom=example.com;
+  dkim=pass header.d=example.com;
+  dmarc=pass p=reject
+
+This is the plain text body of the test email.
+It can span multiple lines.

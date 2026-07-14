@@ -24,7 +24,8 @@ export type AuthResult =
   | "none"
   | "permerror"
   | "temperror"
-  | "unknown";
+  | "unknown"
+  | string;
 
 export interface SpfResult {
   result: AuthResult;
@@ -83,7 +84,7 @@ export interface ParsedEmailTransport {
   receivedChain: ReceivedHop[];
   rawHeaders: Record<string, string | string[]>;
 
-  sourceFormat: "eml" | "msg";
+  sourceFormat: "eml" | "msg" | string;
   parsedAt: string; // ISO string
 }
 
