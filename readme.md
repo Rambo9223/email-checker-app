@@ -60,7 +60,7 @@ The project was built as a practical utility for anyone who regularly receives e
 * [![Vite][Vite.com]][Vite-url]
 * [![Express.js][Express.js.com]][Express.js-url]
 * [![Node.js][Node.js.com]][Node.js-url]
-* [![Claude][claude.ai][claude.ai-url]]
+* [![Claude][claude.ai]][claude.ai-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
