@@ -5,24 +5,24 @@ export const mockServerRes = {
         "date": "2026-06-04T14:55:20.000Z",
         "from": {
             "name": "",
-            "email": "elaine@riversidekitchens.co.uk"
+            "email": "laine@riverside.co.uk"
         },
         "replyTo": [],
         "to": [
             {
                 "name": "'Amy'",
-                "email": "amy@riversidekitchens.co.uk"
+                "email": "amy@riverside.co.uk"
             },
             {
                 "name": "",
-                "email": "SRMusic2020@hotmail.com"
+                "email": "Music2020@hotmail.com"
             }
         ],
         "cc": [],
         "bcc": [],
         "body": {
-            "text": "Thank  you very much \n\n \n\nFrom: Scott Ramsay <SRMusic2020@hotmail.com> \nSent: 04 June 2026 15:04\nTo: Elaine Sutherland <elaine@riversidekitchens.co.uk>; 'Amy Inglis' <amy@orrinrestaurant.com>\nSubject: Invoice SR 03.06.26\n\n \n\nHey Amy/Elaine, \n\n \n\nIt was great to be back last night to play for you. 🙂 I've attached the invoice for last nights performance. \n\n \n\nMany Thanks\n\nScott\n\n\n",
-            "html": "<html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\" xmlns=\"http://www.w3.org/TR/REC-html40\"><head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"Generator\" content=\"Microsoft Word 15 (filtered medium)\"><style><!--\n/* Font Definitions */\n@font-face\n\t{font-family:\"Cambria Math\";\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\n@font-face\n\t{font-family:Calibri;\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\n@font-face\n\t{font-family:Aptos;}\n@font-face\n\t{font-family:\"Segoe UI Emoji\";\n\tpanose-1:2 11 5 2 4 2 4 2 2 3;}\n/* Style Definitions */\np.MsoNormal, li.MsoNormal, div.MsoNormal\n\t{margin:0cm;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\nspan.EmailStyle19\n\t{mso-style-type:personal-reply;\n\tfont-family:\"Aptos\",sans-serif;\n\tcolor:windowtext;}\n.MsoChpDefault\n\t{mso-style-type:export-only;\n\tfont-size:10.0pt;\n\tmso-ligatures:none;}\n@page WordSection1\n\t{size:612.0pt 792.0pt;\n\tmargin:72.0pt 72.0pt 72.0pt 72.0pt;}\ndiv.WordSection1\n\t{page:WordSection1;}\n--></style><!--[if gte mso 9]><xml>\n<o:shapedefaults v:ext=\"edit\" spidmax=\"1026\" />\n</xml><![endif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v:ext=\"edit\">\n<o:idmap v:ext=\"edit\" data=\"1\" />\n</o:shapelayout></xml><![endif]--></head><body lang=\"EN-GB\" link=\"#467886\" vlink=\"#96607D\" style=\"word-wrap:break-word\"><div class=\"WordSection1\"><p class=\"MsoNormal\"><span style=\"font-size:11.0pt;mso-fareast-language:EN-US\">Thank &nbsp;you very much <o:p></o:p></span></p><p class=\"MsoNormal\"><span style=\"font-size:11.0pt;mso-fareast-language:EN-US\"><o:p>&nbsp;</o:p></span></p><div><div style=\"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm\"><p class=\"MsoNormal\"><b><span lang=\"EN-US\" style=\"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif\">From:</span></b><span lang=\"EN-US\" style=\"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif\"> Scott Ramsay &lt;SRMusic2020@hotmail.com&gt; <br><b>Sent:</b> 04 June 2026 15:04<br><b>To:</b> Elaine Sutherland &lt;elaine@riversidekitchens.co.uk&gt;; 'Amy Inglis' &lt;amy@orrinrestaurant.com&gt;<br><b>Subject:</b> Invoice SR 03.06.26<o:p></o:p></span></p></div></div><p class=\"MsoNormal\"><o:p>&nbsp;</o:p></p><div><p class=\"MsoNormal\"><span style=\"color:black\">Hey Amy/Elaine,&nbsp;<o:p></o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\"><o:p>&nbsp;</o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\">It was great to be back last night to play for you. </span><span style=\"font-family:&quot;Segoe UI Emoji&quot;,sans-serif;color:black\">&#128578;</span><span style=\"color:black\"> I've attached the invoice for last nights performance.&nbsp;<o:p></o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\"><o:p>&nbsp;</o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\">Many Thanks<o:p></o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\">Scott<o:p></o:p></span></p></div></div></body></html>\n",
+            "text": "Thank  you very much \n\n \n\nFrom: Scott Ramsay <Music2020@hotmail.com> \nSent: 04 June 2026 15:04\nTo: Elaine Sutherland <laine@riverside.co.uk>; 'Amy Inglis' <amy@restaurant.com>\nSubject: Invoice SR 03.06.26\n\n \n\nHey Amy/Elaine, \n\n \n\nIt was great to be back last night to play for you. 🙂 I've attached the invoice for last nights performance. \n\n \n\nMany Thanks\n\nScott\n\n\n",
+            "html": "<html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\" xmlns=\"http://www.w3.org/TR/REC-html40\"><head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"Generator\" content=\"Microsoft Word 15 (filtered medium)\"><style><!--\n/* Font Definitions */\n@font-face\n\t{font-family:\"Cambria Math\";\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\n@font-face\n\t{font-family:Calibri;\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\n@font-face\n\t{font-family:Aptos;}\n@font-face\n\t{font-family:\"Segoe UI Emoji\";\n\tpanose-1:2 11 5 2 4 2 4 2 2 3;}\n/* Style Definitions */\np.MsoNormal, li.MsoNormal, div.MsoNormal\n\t{margin:0cm;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\nspan.EmailStyle19\n\t{mso-style-type:personal-reply;\n\tfont-family:\"Aptos\",sans-serif;\n\tcolor:windowtext;}\n.MsoChpDefault\n\t{mso-style-type:export-only;\n\tfont-size:10.0pt;\n\tmso-ligatures:none;}\n@page WordSection1\n\t{size:612.0pt 792.0pt;\n\tmargin:72.0pt 72.0pt 72.0pt 72.0pt;}\ndiv.WordSection1\n\t{page:WordSection1;}\n--></style><!--[if gte mso 9]><xml>\n<o:shapedefaults v:ext=\"edit\" spidmax=\"1026\" />\n</xml><![endif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v:ext=\"edit\">\n<o:idmap v:ext=\"edit\" data=\"1\" />\n</o:shapelayout></xml><![endif]--></head><body lang=\"EN-GB\" link=\"#467886\" vlink=\"#96607D\" style=\"word-wrap:break-word\"><div class=\"WordSection1\"><p class=\"MsoNormal\"><span style=\"font-size:11.0pt;mso-fareast-language:EN-US\">Thank &nbsp;you very much <o:p></o:p></span></p><p class=\"MsoNormal\"><span style=\"font-size:11.0pt;mso-fareast-language:EN-US\"><o:p>&nbsp;</o:p></span></p><div><div style=\"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm\"><p class=\"MsoNormal\"><b><span lang=\"EN-US\" style=\"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif\">From:</span></b><span lang=\"EN-US\" style=\"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif\"> Scott Ramsay &lt;Music2020@hotmail.com&gt; <br><b>Sent:</b> 04 June 2026 15:04<br><b>To:</b> Laine Sutherland &lt;laine@riverside.co.uk&gt;; 'Amy Inglis' &lt;amy@restaurant.com&gt;<br><b>Subject:</b> Invoice SR 03.06.26<o:p></o:p></span></p></div></div><p class=\"MsoNormal\"><o:p>&nbsp;</o:p></p><div><p class=\"MsoNormal\"><span style=\"color:black\">Hey Amy/Elaine,&nbsp;<o:p></o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\"><o:p>&nbsp;</o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\">It was great to be back last night to play for you. </span><span style=\"font-family:&quot;Segoe UI Emoji&quot;,sans-serif;color:black\">&#128578;</span><span style=\"color:black\"> I've attached the invoice for last nights performance.&nbsp;<o:p></o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\"><o:p>&nbsp;</o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\">Many Thanks<o:p></o:p></span></p></div><div><p class=\"MsoNormal\"><span style=\"color:black\">Scott<o:p></o:p></span></p></div></div></body></html>\n",
             "extractedUrls": [
                 "http://schemas.microsoft.com/office/2004/12/omml",
                 "http://www.w3.org/TR/REC-html40"
@@ -41,23 +41,23 @@ export const mockServerRes = {
         "authentication": {
             "spf": {
                 "result": "pass",
-                "domain": "riversidekitchens.co.uk",
-                "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100"
+                "domain": "riverside.co.uk",
+                "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
             },
             "dkim": [
                 {
                     "result": "pass",
-                    "domain": "riversidekitchens.co.uk",
+                    "domain": "riverside.co.uk",
                     "selector": null,
-                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100"
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
                 }
             ],
             "dmarc": {
                 "result": "pass",
                 "policy": null,
-                "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100"
+                "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
             },
-            "compoundHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100"
+            "compoundHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
         },
         "receivedChain": [
             {
@@ -163,22 +163,22 @@ export const mockServerRes = {
             {
                 "name": "SPF",
                 "status": "pass",
-                "detail": "SPF passed for domain riversidekitchens.co.uk",
+                "detail": "SPF passed for domain riverside.co.uk",
                 "raw": {
                     "result": "pass",
-                    "domain": "riversidekitchens.co.uk",
-                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100"
+                    "domain": "riverside.co.uk",
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
                 }
             },
             {
-                "name": "DKIM (riversidekitchens.co.uk)",
+                "name": "DKIM (riverside.co.uk)",
                 "status": "pass",
-                "detail": "DKIM signature valid for riversidekitchens.co.uk",
+                "detail": "DKIM signature valid for riverside.co.uk",
                 "raw": {
                     "result": "pass",
-                    "domain": "riversidekitchens.co.uk",
+                    "domain": "riverside.co.uk",
                     "selector": null,
-                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100"
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
                 }
             },
             {
@@ -188,12 +188,12 @@ export const mockServerRes = {
                 "raw": {
                     "result": "pass",
                     "policy": null,
-                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100"
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
                 }
             }
         ],
         "sender": {
-            "Address": "elaine@riversidekitchens.co.uk",
+            "Address": "laine@riverside.co.uk",
             "catch_all": 0,
             "Status": "Valid",
             "Disposable_Domain": 0,
@@ -203,7 +203,7 @@ export const mockServerRes = {
             "score": 100,
             "provider": "My Email Verifier",
             "raw": {
-                "Address": "elaine@riversidekitchens.co.uk",
+                "Address": "laine@riverside.co.uk",
                 "catch_all": 0,
                 "Disposable_Domain": 0,
                 "Role_Based": 0,
@@ -325,74 +325,3 @@ export const mockServerRes = {
         "generatedAt": "2026-07-10T09:59:44.312Z"
     }
 } 
-
-export const mockEmail = {
-    eml:`X-Unsent: 1
-From: Scott Ramsay <sct_r_9223@live.co.uk>
-CC: "anotheremail@msn.com" <anotheremail@msn.com>
-BCC: "anotherblindsend@gmail.com" <anotherblindsend@gmail.com>
-Subject: This is a Mock
-Thread-Topic: This is a Mock
-Thread-Index: AQHdEULPNY+UBbZ+8kWtbGJWvCYnpA==
-X-MS-Exchange-MessageSentRepresentingType: 1
-Date: Sat, 11 Jul 2026 14:37:33 +0000
-Message-ID:
-	<AM6PR03MB4600423575A22064DA1D1A58E2FC2@AM6PR03MB4600.eurprd03.prod.outlook.com>
-Content-Language: en-GB
-X-MS-Has-Attach:
-X-MS-TNEF-Correlator:
-X-MS-Exchange-Organization-RecordReviewCfmType: 0
-msip_labels:
-Content-Type: multipart/alternative;
-	boundary="_000_AM6PR03MB4600423575A22064DA1D1A58E2FC2AM6PR03MB4600eurp_"
-MIME-Version: 1.0
-
---_000_AM6PR03MB4600423575A22064DA1D1A58E2FC2AM6PR03MB4600eurp_
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-This is a mock email for testing purposes.
-
-Enjoy the app,
-
-Regards
-The Developer
-
---_000_AM6PR03MB4600423575A22064DA1D1A58E2FC2AM6PR03MB4600eurp_
-Content-Type: text/html; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-<html>
-<head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
-1">
-<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
-ttom:0;} </style>
-</head>
-<body dir=3D"ltr">
-<div class=3D"elementToProof" style=3D"font-family: Calibri, Helvetica, san=
-s-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-This is a mock email for testing purposes.&nbsp;</div>
-<div class=3D"elementToProof" style=3D"font-family: Calibri, Helvetica, san=
-s-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<div class=3D"elementToProof" style=3D"font-family: Calibri, Helvetica, san=
-s-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-Enjoy the app,&nbsp;</div>
-<div class=3D"elementToProof" style=3D"font-family: Calibri, Helvetica, san=
-s-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<div class=3D"elementToProof" style=3D"font-family: Calibri, Helvetica, san=
-s-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-Regards&nbsp;</div>
-<div class=3D"elementToProof" style=3D"font-family: Calibri, Helvetica, san=
-s-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-The Developer</div>
-</body>
-</html>
-
---_000_AM6PR03MB4600423575A22064DA1D1A58E2FC2AM6PR03MB4600eurp_--
-`
-}

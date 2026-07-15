@@ -20,7 +20,7 @@ describe("CheckItem Tests",()=>{
         render(<MockCheckItem/>)
         let name = await screen.findByText("SPF");
         let status = await screen.findByText("✓");
-        let detail = await screen.findByText("SPF passed for domain riversidekitchens.co.uk");
+        let detail = await screen.findByText("SPF passed for domain riverside.co.uk");
         expect(name).toBeInTheDocument();
         expect(status).toBeInTheDocument();
         expect(detail).toBeInTheDocument();
