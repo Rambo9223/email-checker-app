@@ -60,6 +60,7 @@ The project was built as a practical utility for anyone who regularly receives e
 * [![Vite][Vite.com]][Vite-url]
 * [![Express.js][Express.js.com]][Express.js-url]
 * [![Node.js][Node.js.com]][Node.js-url]
+* [![Claude][claude.ai][claude.ai-url]]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -153,7 +154,7 @@ Upload (.eml / .msg)
        └─ msgParser     →  @kenjiuno/msgreader
               │
               ├─ headerValidator    (SPF / DKIM / DMARC — no API key required)
-              ├─ senderValidator    (my-email-verifier API + custom score generator)
+              ├─ senderValidator    (my-email-verifier API - optional API Key + custom score generator)
               ├─ contentValidator   (Postmark SpamCheck — free, no key required)
               └─ urlValidator       (Google Safe Browsing — optional API key)
                         │
@@ -176,17 +177,19 @@ Upload (.eml / .msg)
 <!-- TESTING -->
 ## Testing
 
-Tests are located in `frontend/src/__tests__/`. Fixture `.eml` and `.msg` files used in tests can be found in `frontend/src/__tests__/fixtures/`.
+Tests are located in `frontend/src/tests`. Mock `.eml` and `.msg` files used in tests can be found in `frontend/src/mocks`.
 
 To run the frontend test suite, open a terminal in the `frontend` directory and run:
 
 ```bash
-npm run test
+npm test
 ```
 
-Tests are written using **Vitest** and **React Testing Library**. Fixture files are imported using Vite's `?raw` suffix, requiring no Node.js `fs` or `path` dependencies on the client side.
+Tests are written using **Vitest** and **React Testing Library**.
 
 The current test suite covers:
+
+- Add the test coverage information
 
 - Acceptance of valid `.eml` files via the dropzone input
 - Acceptance of valid `.msg` files via the dropzone input
@@ -263,3 +266,5 @@ LinkedIn: [www.linkedin.com/in/scott-ramsay-287b43286](https://www.linkedin.com/
 [Express.js-url]: https://expressjs.com/
 [Node.js.com]: https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
 [Node.js-url]: https://nodejs.org/
+[claude.ai]:https://img.shields.io/badge/Claude_Code-555?logo=claude
+[claude.ai-url]:https://claude.ai/
