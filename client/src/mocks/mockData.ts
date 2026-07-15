@@ -199,6 +199,7 @@ export const mockServerRes = {
             "Disposable_Domain": 0,
             "Role_Based": 0,
             "Free_Domain": 0,
+            "Greylisted": 0,
             "Diagnosis": "Mailbox exists and active. Safe to send (D2)",
             "score": 100,
             "provider": "My Email Verifier",
@@ -310,7 +311,336 @@ export const mockServerRes = {
             },
             {
                 "url": "http://www.w3.org/TR/REC-html40",
+                "isSafe": false,
+                "threatTypes": [],
+                "provider": "GoogleSafeBrowsing",
+                "raw": null
+            }
+        ]
+    },
+    "summary": {
+        "overallStatus": "pass",
+        "passCount": 3,
+        "warnCount": 0,
+        "failCount": 0,
+        "generatedAt": "2026-07-10T09:59:44.312Z"
+    }
+} 
+
+
+export const resBasic = {
+    "parsedEmail": {
+        "messageId": "<09f701dcf432$2a46d6e0$7ed484a0$@riversidekitchens.co.uk>",
+        "subject": "FW: Invoice SR 03.06.26",
+        "date": "2026-06-04T14:55:20.000Z",
+        "from": {
+            "name": "",
+            "email": "laine@riverside.co.uk"
+        },
+        "replyTo": [],
+        "to": [
+            {
+                "name": "'Amy'",
+                "email": "amy@riverside.co.uk"
+            },
+            {
+                "name": "",
+                "email": "Music2020@hotmail.com"
+            }
+        ],
+        "cc": [],
+        "bcc": [],
+        "body": {
+            "text": "Thank  you very much \n\n \n\nFrom: Scott Ramsay <Music2020@hotmail.com> \nSent: 04 June 2026 15:04\nTo: Elaine Sutherland <laine@riverside.co.uk>; 'Amy Inglis' <amy@restaurant.com>\nSubject: Invoice SR 03.06.26\n\n \n\nHey Amy/Elaine, \n\n \n\nIt was great to be back last night to play for you. 🙂 I've attached the invoice for last nights performance. \n\n \n\nMany Thanks\n\nScott\n\n\n",
+            "html": null,
+            "extractedUrls": [
+                "http://schemas.microsoft.com/office/2004/12/omml",
+                "http://www.w3.org/TR/REC-html40"
+            ]
+        },
+        "attachments": [
+            {
+                "filename": "SR Orrin 03.06.26.pdf",
+                "contentType": "application/pdf",
+                "size": 10,
+                "contentId": null,
+                "contentDisposition": "attachment",
+            }
+        ],
+        "authentication": {
+            "spf": {
+                "result": "pass",
+                "domain": "riverside.co.uk",
+                "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
+            },
+            "dkim": [
+                {
+                    "result": "pass",
+                    "domain": "riverside.co.uk",
+                    "selector": null,
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
+                }
+            ],
+            "dmarc": {
+                "result": "pass",
+                "policy": null,
+                "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
+            },
+            "compoundHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
+        },
+        "receivedChain": [
+            {
+                "from": "client.hidden.invalid",
+                "by": "mrelayeu.kundenserver.de",
+                "timestamp": "2026-06-04T14:55:20.000Z",
+                "raw": "from client.hidden.invalid by mrelayeu.kundenserver.de (mreue009 [212.227.17.165]) with ESMTPSA (Nemesis) id 1MlNgz-1wyU1a3nGX-00oTXI; Thu, 04 Jun 2026 16:55:20 +0200"
+            },
+            {
+                "from": "mout.kundenserver.de",
+                "by": "SJ1PEPF0000231C.mail.protection.outlook.com",
+                "timestamp": "2026-06-04T14:55:21.000Z",
+                "raw": "from mout.kundenserver.de (212.227.126.130) by SJ1PEPF0000231C.mail.protection.outlook.com (10.167.242.233) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.92.5 via Frontend Transport; Thu, 4 Jun 2026 14:55:21 +0000"
+            },
+            {
+                "from": "SJ1PEPF0000231C.namprd03.prod.outlook.com",
+                "by": "SJ0PR03CA0168.outlook.office365.com",
+                "timestamp": "2026-06-04T14:55:22.000Z",
+                "raw": "from SJ1PEPF0000231C.namprd03.prod.outlook.com (2603:10b6:a03:338:cafe::63) by SJ0PR03CA0168.outlook.office365.com (2603:10b6:a03:338::23) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.92.8 via Frontend Transport; Thu, 4 Jun 2026 14:55:22 +0000"
+            },
+            {
+                "from": "SJ0PR03CA0168.namprd03.prod.outlook.com",
+                "by": "AM7PR07MB6596.eurprd07.prod.outlook.com",
+                "timestamp": "2026-06-04T14:55:23.000Z",
+                "raw": "from SJ0PR03CA0168.namprd03.prod.outlook.com (2603:10b6:a03:338::23) by AM7PR07MB6596.eurprd07.prod.outlook.com (2603:10a6:20b:1a3::23) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Thu, 4 Jun 2026 14:55:23 +0000"
+            },
+            {
+                "from": "AM7PR07MB6596.eurprd07.prod.outlook.com",
+                "by": "AS8PR07MB7640.eurprd07.prod.outlook.com",
+                "timestamp": "2026-06-04T14:55:25.000Z",
+                "raw": "from AM7PR07MB6596.eurprd07.prod.outlook.com (2603:10a6:20b:1a3::23) by AS8PR07MB7640.eurprd07.prod.outlook.com with HTTPS; Thu, 4 Jun 2026 14:55:25 +0000"
+            }
+        ],
+        "rawHeaders": {
+            "received": [
+                "from AM7PR07MB6596.eurprd07.prod.outlook.com (2603:10a6:20b:1a3::23) by AS8PR07MB7640.eurprd07.prod.outlook.com with HTTPS; Thu, 4 Jun 2026 14:55:25 +0000",
+                "from SJ0PR03CA0168.namprd03.prod.outlook.com (2603:10b6:a03:338::23) by AM7PR07MB6596.eurprd07.prod.outlook.com (2603:10a6:20b:1a3::23) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Thu, 4 Jun 2026 14:55:23 +0000",
+                "from SJ1PEPF0000231C.namprd03.prod.outlook.com (2603:10b6:a03:338:cafe::63) by SJ0PR03CA0168.outlook.office365.com (2603:10b6:a03:338::23) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.92.8 via Frontend Transport; Thu, 4 Jun 2026 14:55:22 +0000",
+                "from mout.kundenserver.de (212.227.126.130) by SJ1PEPF0000231C.mail.protection.outlook.com (10.167.242.233) with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.92.5 via Frontend Transport; Thu, 4 Jun 2026 14:55:21 +0000",
+                "from client.hidden.invalid by mrelayeu.kundenserver.de (mreue009 [212.227.17.165]) with ESMTPSA (Nemesis) id 1MlNgz-1wyU1a3nGX-00oTXI; Thu, 04 Jun 2026 16:55:20 +0200"
+            ],
+            "authentication-results": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riversidekitchens.co.uk; dkim=pass (signature was verified) header.d=riversidekitchens.co.uk;dmarc=pass action=none header.from=riversidekitchens.co.uk;compauth=pass reason=100",
+            "received-spf": "Pass (protection.outlook.com: domain of riversidekitchens.co.uk designates 212.227.126.130 as permitted sender) receiver=protection.outlook.com; client-ip=212.227.126.130; helo=mout.kundenserver.de; pr=C",
+            "x-incomingtopheadermarker": "OriginalChecksum:821D07BF2942099DC0D9B7578C619B2CE15E27724F6E1859D2EACC50EF973D49;UpperCasedChecksum:6B4DCD0362516C8B9460BA627FBB82371FC6552656EA5A7006C06242DF44D64E;SizeAsReceived:4256;Count:18",
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=riversidekitchens.co.uk; s=s1-ionos; t=1780584920; x=1781189720; i=elaine@riversidekitchens.co.uk; bh=sWTI798oM2YyXLIz7EqUuIVy/AdVKbCIpwMaYR/1tuI=; h=X-UI-Sender-Class:From:To:References:In-Reply-To:Subject:Date: Message-ID:MIME-Version:Content-Type:cc:content-transfer-encoding: content-type:date:from:message-id:mime-version:reply-to:subject: to; b=bVLNuRAFvKlF/Z475IuOGGcNxSFeVzdInVF0XndKHa/lH7j/l9kFBPQwzsDNZ4yx msQm70zQ5Q8hbI2Zq+Z01NLIkvj+GsfXDeER2ZfMFDIDcVcvVqfSQjnfOlsTGhVxC n+hY6eIu002NOcfYo2cGurV1I7EURMP4NwKPam8q29eE0a5i2p17yFkggusm/+26I sI5Xoh6vLDUgFIpfueYzxT65ewRrz6TZ3fLsaQaJFs87LZiS5gBtlJdeMPIEqIgjz n2c2+seGUhx6phUcuErg8eKFQ3yEhDpC9YimfYc0DYRUCd45YxL9SH0xHuH4fANao JdZpEai4/NnKf8x4aQ==",
+            "x-ui-sender-class": "55c96926-9e95-11ee-ae09-1f7a4046a0f6",
+            "from": "<elaine@riversidekitchens.co.uk>",
+            "to": "\"'Amy'\" <amy@riversidekitchens.co.uk>, <SRMusic2020@hotmail.com>",
+            "references": "<AS8PR07MB7640265B7D0F164691D1A198AF102@AS8PR07MB7640.eurprd07.prod.outlook.com>",
+            "in-reply-to": "<AS8PR07MB7640265B7D0F164691D1A198AF102@AS8PR07MB7640.eurprd07.prod.outlook.com>",
+            "subject": "FW: Invoice SR 03.06.26",
+            "date": "Thu, 4 Jun 2026 15:55:20 +0100",
+            "message-id": "<09f701dcf432$2a46d6e0$7ed484a0$@riversidekitchens.co.uk>",
+            "content-type": "multipart/mixed; boundary=\"----=_NextPart_000_09F8_01DCF43A.8C0C0230\"",
+            "x-mailer": "Microsoft Outlook 16.0",
+            "thread-index": "AQJgh8rpi5JDr1NRVAS1rLrvNIc2kbUnVHmQ",
+            "content-language": "en-gb",
+            "x-provags-id": "V03:K1:g0TAvkKNwrsPDwt6TwDLiw0DI1suUU24tv0twvmR7gddKHnIREj DAiJERRtlJn/ERkjFY83RO+pJj+9DJeBsuUWsM9vmz49+7k8KWKFsBwIQAXXKfmdxftRYwf F5G5juPjnYLL/zCl6Ba/GEruCO7F51+BrCENobH9riPMMk+Ip9eP5PVya8EseppZi0blnTS zscIoBlPWx+wTeND+U18g==",
+            "x-spam-flag": "NO",
+            "ui-outboundreport": "notjunk:1;M01:P0:OuJevIZzz6w=;kspppG03LdUh/s4NDXY5wvs2AxK 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 td847K4RylY=",
+            "x-incomingheadercount": "18",
+            "return-path": "elaine@riversidekitchens.co.uk",
+            "x-ms-exchange-organization-expirationstarttime": "04 Jun 2026 14:55:22.4822 (UTC)",
+            "x-ms-exchange-organization-expirationstarttimereason": "OriginalSubmit",
+            "x-ms-exchange-organization-expirationinterval": "1:00:00:00.0000000",
+            "x-ms-exchange-organization-expirationintervalreason": "OriginalSubmit",
+            "x-ms-exchange-organization-network-message-id": "f12a55d3-53e3-4d5e-bf53-08dec2494dad",
+            "x-eopattributedmessage": "0",
+            "x-eoptenantattributedmessage": "84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0",
+            "x-ms-exchange-organization-messagedirectionality": "Incoming",
+            "x-ms-publictraffictype": "Email",
+            "x-ms-traffictypediagnostic": "SJ1PEPF0000231C:EE_|AM7PR07MB6596:EE_|AS8PR07MB7640:EE_",
+            "x-ms-exchange-organization-authsource": "SJ1PEPF0000231C.namprd03.prod.outlook.com",
+            "x-ms-exchange-organization-authas": "Anonymous",
+            "x-ms-userlastlogontime": "6/4/2026 2:04:15 PM",
+            "x-ms-office365-filtering-correlation-id": "f12a55d3-53e3-4d5e-bf53-08dec2494dad",
+            "x-ms-exchange-eopdirect": "true",
+            "x-sender-ip": "212.227.126.130",
+            "x-sid-pra": "ELAINE@RIVERSIDEKITCHENS.CO.UK",
+            "x-sid-result": "PASS",
+            "x-ms-exchange-organization-scl": "1",
+            "x-microsoft-antispam": "BCL:0;ARA:1444111002|20103052903057|20103052901057|21090799003|13002599018|6019299003|58110799003|29090799004|22090799003|6092099016|20103052914048|20103052904057|1380799030|1360799030|1370799030|3412199025|440099028|30041999003|22062799003;",
+            "x-ms-exchange-crosstenant-originalarrivaltime": "04 Jun 2026 14:55:21.7822 (UTC)",
+            "x-ms-exchange-crosstenant-network-message-id": "f12a55d3-53e3-4d5e-bf53-08dec2494dad",
+            "x-ms-exchange-crosstenant-id": "84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa",
+            "x-ms-exchange-crosstenant-authsource": "SJ1PEPF0000231C.namprd03.prod.outlook.com",
+            "x-ms-exchange-crosstenant-authas": "Anonymous",
+            "x-ms-exchange-crosstenant-fromentityheader": "Internet",
+            "x-ms-exchange-crosstenant-rms-persistedconsumerorg": "00000000-0000-0000-0000-000000000000",
+            "x-ms-exchange-transport-crosstenantheadersstamped": "AM7PR07MB6596",
+            "x-ms-exchange-transport-endtoendlatency": "00:00:03.6787392",
+            "x-ms-exchange-processed-by-bccfoldering": "15.21.0092.005",
+            "x-microsoft-antispam-mailbox-delivery": "ucf:0;jmr:0;ex:0;auth:1;dest:I;OFR:SpamFilterPass;ENG:(5062000311)(920221119095)(920221120095)(90000117)(90011020)(91015020)(91040095)(9050020)(9060121)(9081003)(9100341)(1010050)(944500132)(2008001181)(4810010)(4910033)(9920006)(9510006)(10105021)(9320005)(9230038)(120001);",
+            "x-message-delivery": "Vj0xLjE7dXM9MDtsPTA7YT0wO0Q9MTtHRD0xO1NDTD0tMQ==",
+            "x-microsoft-antispam-message-info": "=?utf-8?B?ZHZwTmVXMExTQk05VW9SVTYvVWpmazYvbmUzY25hV2RkaURKc1Y0QnJTd0E4?= =?utf-8?B?RitBNWg4R2pRTWtSL1B1RElkbVdJM212RngvRnFZT0dmN09zMGZZZEVQZFor?= =?utf-8?B?MU5JSjdDbnUyUTRMcEpTQ2Z3dXBMbUkzdXdtUHNXWDkzQlJyK1UyWG8vWXE1?= =?utf-8?B?cUxYYkkwN0RIbTVUVmxMcElBSWk3b0JUdkVzWGVSNkxlZkxMdDVWaHIzSTNR?= =?utf-8?B?NDVUTnplem1NSmFObUVHVWRyeXdIQ3NlTElWWnZTTHBaWnFac09zNDBTc0Jt?= =?utf-8?B?ekdZMHNydm5ONTkyR1diRkJDYkdoY0dHb0pXVFJ1bmxzSWlqN0NScFlXWVpk?= =?utf-8?B?S2ZNVmlvU1d4TU80T0VJRlpqMEJqTWxBaUsyamRvb09rNTBPZmVEQVdLZ0Jh?= =?utf-8?B?TkZGNFlBZENBSmY3T2E5UVF0UFJiM2hGWEZLaWVDVUdvZE04SlNQcFVEWjJ1?= =?utf-8?B?ZVVqbHBUVjNNQWtkQkw2ZzZmWmVJVy9DMitraVY4ZmFBWWxDTTRTYVlWNXlw?= =?utf-8?B?czZBN3N2Y3FvVlFWWWFBYXpXSXJIcEEyRHR1ZGZHektVQ3JDd2JoQmY5Qk92?= =?utf-8?B?MGw5bjM3VVNjSU14ZFk3Z3Q0WGdMblJtWkZJUFEyUHQxRWQxRStiZTE3eUJC?= =?utf-8?B?allEdk1laUVXdks2Z3o2UnVJdTY5ZkNnMTZRQWNiaWc2UlFwV1AwZXB4SlRu?= =?utf-8?B?elYwMnJ6VmpUZW1HalhTOEVwUHR5ZTdxY1YxV1UzYkw0M3NBeTlUZ3VrSGFj?= =?utf-8?B?N3hDWG04S0ZqUXVTc2tMaEFlSEt0dWdQamFtWi9OdFBFMXJuekZtUEV1bTVE?= =?utf-8?B?THJqa1dITHdoc05naXY3VzVkTlFXdFpITkp2WlRoTUVpUm9JbXQ0aDJWNWhE?= =?utf-8?B?bjhNdlh2enJYSUEyaDNMamhXcWlTTGk4RXo1Y1dhQ3ZVZXJEVFJJdFoycnkr?= =?utf-8?B?VmVJaHl5djNtNXozVEoydzBMbnVQRS9ZY0FPazhSSHVkL2ZNV01KRlpEUmZO?= =?utf-8?B?cURTbFdybFRoUjRHSUZYRlFodWhoNnlMaFZ3VTBoZHdCb0FSSDFTYi9hMVMx?= =?utf-8?B?RDBablZoeWFQSm5jQm1CTGU4YUEvU0MvS3dEUDJXU0M1TXlaMzMweVZGM0J3?= =?utf-8?B?b0tOdk43Y2txN3lDRjdRaWF6NVVvMGQxVktsaE1aRE81emZZTHd0NU9rZTAx?= =?utf-8?B?VzJiVTE4QVRYWThxTUtFOW9QQTVVSkhUS01EbDVYTnpJRlZOaENvNElTUE52?= =?utf-8?B?bk1uaTJTeWZXZEdGRkY4T3RJVU92dHUrUlV6VEROcm0xek90LzdlNEoxaG1P?= =?utf-8?B?YVQrYVlLTnJGbWphQmlsLzdLQk9RTjZ2MTBuVk1uSmx6S2ZwblQ3QXFZbVJ4?= =?utf-8?B?N09ObURaKzVuS29QMWtTaWFWNTh4VCtSWmw4N2hIbmlxVUtlcmxudzJoS3FC?= =?utf-8?B?L1JGMDlDVkhqa2paQUxJZExDdXNRanJJTTlETG50YUdwY0hqa09JTEtWS3dD?= =?utf-8?B?OVhhdU45VGg1TDVFdjI3YWFyRllnVWtRUy83TG5KNFdCek9wNUc2VDhKWHEx?= =?utf-8?B?bHVXZS9PQ0FEdEphajJqUW1Od1Y5VGJOQm8xUUFpcWV5U05kVnhtZExLc0ht?= =?utf-8?B?ZktvMFpqZXJYeXhYQ0NPeUJzTUpxMWJtRUVuVXVTL1JENUphTGVQUTBWU0Yw?= =?utf-8?B?dHhkV2VlRnVkMXk0NTBXWHp5RWd5SnJMdzhQRFI1MmQ2RFlzR1hxNmpkOEVZ?= =?utf-8?B?UXU1ems4SU1uTHpWc0kyMVA0a1ZpcHpCRFVJNmhSeFdNQlFlem1pMkZrR3Ey?= =?utf-8?B?RDNQWm9heDhZcXhaOWFsZ2ltaTZuNi8xNXVyYXZPd3N6NURORmF5ZHNXN0xx?= =?utf-8?B?Vmd1bmtaakZGYXZCd2MrdTJXSlNNUkRmd0hLWkNabWVZSUhKcU9ubk9zTDlW?= =?utf-8?B?OXZQT3FHZWkxZlBEb1U1SG93Y2hNUE9EU0pMTTBaajlBdlhDcGFJaXNnTGZV?= =?utf-8?B?UXgrSkNZSzdwTTlWL1Z5cmNISnllc0ZVM0lheE1nckNXYnk5ZGRJMFdSUnE0?= =?utf-8?B?YWZENjlxSjRWbkg4MEdBY0pEaVhIcENQVjhqU1NDK2svTVNwQjl5KzhXUFFi?= =?utf-8?B?YllkajBxVmdQVHZJbFVNZDB0cXFTbnh3aksrVjg3L1kwQ1BpRzFpc2xQMCtI?= =?utf-8?B?M1lVV2NVUm9TeU9TUTMvblpUeE5ybkw3bmIvRElqNThnSnY5UUxkdFJLS1o2?= =?utf-8?B?SFJMOGljUTB2emFHckhhNjhsZ2pTRkZOWWZ1dHhQY0VaVUxZbFZBdU91anZm?= =?utf-8?B?SjBhdGJ5UTRQSWFaOXR0ZVJmczB3V1NrV0F1WUkxMXQ5aUx2c1B0K0lKQnc1?= =?utf-8?B?eCtKV3VMeXMrbk9RNVRkTXVYcFh0SHpIY0NSME5CemxQVmU1NUZjOSt4enV6?= =?utf-8?B?Qm1MbWk1b2NmcVUzVDZDWEFFd2pldXI4L1VoQnJwbmFTbFlYbVM5WkJ3V2o1?= =?utf-8?B?MDM5OVVUYTIrNS9QcDduSTJqNjlCSWdMY0FTMFJMd3RqZnA5b2VPRlo3eDlk?= =?utf-8?B?TE8yYlBWSW05ak12N2ZJb1RHUVNLdlA0UDBRQmFkQmswNHdaQUh6NTVQUWpJ?= =?utf-8?B?K0RYRVRoN1k3TCtKSVZjNWtlNWRqQ0ZmdlRQWnFYalpwSGhFdTdPWTdFUU5q?= =?utf-8?B?eFErMEFrVVBGa1M4ci9Fd1lpaEJXWVp0M0ZpQld4S2VEZitpTVNFbTJ2dGFX?= =?utf-8?B?YkZEeVY5ckNCMHl3a2lHTmR2eG55QndjbzhKWHIrcnlNaWw3Y2RIM3FZQzhl?= =?utf-8?B?aVprdGc5MDlaL0pqUStjYmtvWWkvSUt6eHY4VDdFMFB6ZjlVaFhkYzVqamRU?= =?utf-8?B?R2k3K0Jhd3JOMHBHVHNBUXg2U3hmbzlmRnVVb3MrdGhWT0Rzd3I4OE1ZWlph?= =?utf-8?Q?j0yI0JXvV4tutEeI?=",
+            "mime-version": "1.0"
+        },
+        "sourceFormat": "eml",
+        "parsedAt": "2026-07-10T09:59:42.986Z"
+    },
+    "checks": {
+        "auth": [
+            {
+                "name": "SPF",
+                "status": "pass",
+                "detail": "SPF passed for domain riverside.co.uk",
+                "raw": {
+                    "result": "pass",
+                    "domain": "riverside.co.uk",
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
+                }
+            },
+            {
+                "name": "DKIM (riverside.co.uk)",
+                "status": "pass",
+                "detail": "DKIM signature valid for riverside.co.uk",
+                "raw": {
+                    "result": "pass",
+                    "domain": "riverside.co.uk",
+                    "selector": null,
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
+                }
+            },
+            {
+                "name": "DMARC",
+                "status": "pass",
+                "detail": "DMARC passed (policy: none)",
+                "raw": {
+                    "result": "pass",
+                    "policy": null,
+                    "rawHeader": "spf=pass (sender IP is 212.227.126.130) smtp.mailfrom=riverside.co.uk; dkim=pass (signature was verified) header.d=riverside.co.uk;dmarc=pass action=none header.from=riverside.co.uk;compauth=pass reason=100"
+                }
+            }
+        ],
+        "sender": {
+            "Address": "laine@riverside.co.uk",
+            "catch_all": false,
+            "Status": "Valid",
+            "Disposable_Domain": false,
+            "Role_Based": false,
+            "Free_Domain": false,
+            "GreyListed": false,
+            "Diagnosis": "Mailbox exists and active. Safe to send (D2)",
+            "score": 100,
+            "provider": "My Email Verifier",
+            "raw": {
+                "Address": "laine@riverside.co.uk",
+                "catch_all": false,
+                "Disposable_Domain": false,
+                "Role_Based": false,
+                "Free_Domain": false,
+                "Greylisted": false,
+                "Status": "Valid",
+                "Diagnosis": "Mailbox exists and active. Safe to send (D2)"
+            }
+        },
+        "content": {
+            "spamScore": "5.5",
+            "spamThreshold": 5,
+            "isSpam": true,
+            "rules": [
+                {
+                    "score": "-0.0",
+                    "description": "Informational: message was not relayed via SMTP"
+                },
+                {
+                    "score": "1.2",
+                    "description": "Missing To: header"
+                },
+                {
+                    "score": "1.4",
+                    "description": "Missing Date: header"
+                },
+                {
+                    "score": "1.0",
+                    "description": "Missing From: header"
+                },
+                {
+                    "score": "-0.0",
+                    "description": "Informational: message has no Received headers"
+                },
+                {
+                    "score": "0.1",
+                    "description": "Missing Message-Id: header"
+                },
+                {
+                    "score": "1.8",
+                    "description": "Missing Subject: header"
+                },
+                {
+                    "score": "0.0",
+                    "description": "No description available."
+                },
+                {
+                    "score": "0.0",
+                    "description": "Message appears to be missing most RFC-822 headers"
+                }
+            ],
+            "provider": "PostmarkSpamCheck",
+            "raw": {
+                "success": true,
+                "score": "5.5",
+                "rules": [
+                    {
+                        "score": "-0.0",
+                        "description": "Informational: message was not relayed via SMTP"
+                    },
+                    {
+                        "score": "1.2",
+                        "description": "Missing To: header"
+                    },
+                    {
+                        "score": "1.4",
+                        "description": "Missing Date: header"
+                    },
+                    {
+                        "score": "1.0",
+                        "description": "Missing From: header"
+                    },
+                    {
+                        "score": "-0.0",
+                        "description": "Informational: message has no Received headers"
+                    },
+                    {
+                        "score": "0.1",
+                        "description": "Missing Message-Id: header"
+                    },
+                    {
+                        "score": "1.8",
+                        "description": "Missing Subject: header"
+                    },
+                    {
+                        "score": "0.0",
+                        "description": "No description available."
+                    },
+                    {
+                        "score": "0.0",
+                        "description": "Message appears to be missing most RFC-822 headers"
+                    }
+                ],
+                "report": " pts rule                   description                                       \n---- ---------------------- --------------------------------------------------\n-0.0 NO_RELAYS              Informational: message was not relayed via SMTP   \n 1.2 MISSING_HEADERS        Missing To: header                                \n 1.4 MISSING_DATE           Missing Date: header                              \n 1.0 MISSING_FROM           Missing From: header                              \n-0.0 NO_RECEIVED            Informational: message has no Received headers    \n 0.1 MISSING_MID            Missing Message-Id: header                        \n 1.8 MISSING_SUBJECT        Missing Subject: header                           \n 0.0 TVD_SPACE_RATIO        No description available.                         \n 0.0 NO_HEADERS_MESSAGE     Message appears to be missing most RFC-822 headers"
+            }
+        },
+        "urls": [
+            {
+                "url": "http://schemas.microsoft.com/office/2004/12/omml",
                 "isSafe": true,
+                "threatTypes": [],
+                "provider": "GoogleSafeBrowsing",
+                "raw": null
+            },
+            {
+                "url": "http://www.w3.org/TR/REC-html40",
+                "isSafe": false,
                 "threatTypes": [],
                 "provider": "GoogleSafeBrowsing",
                 "raw": null
