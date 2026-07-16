@@ -9,6 +9,9 @@
   A diagnostic tool for examining the credibility and quality of raw email files
 </p>
 
+![home](/client/src/assets/images/home.png)
+
+
 </div>
 
 ---
