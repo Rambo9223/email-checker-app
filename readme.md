@@ -87,7 +87,7 @@ Ensure you have the following installed on your machine:
    ```bash
    cd server
    npm install
-   cp .env.example .env
+   cp .env
    npm run dev
    ```
 
@@ -98,7 +98,7 @@ Ensure you have the following installed on your machine:
    ```bash
    cd frontend
    npm install
-   cp .env.example .env
+   cp .env
    npm run dev
    ```
 
@@ -115,6 +115,9 @@ Once both the server and frontend are running, open `http://localhost:5173` in y
 
 **Uploading a file**
 
+![home](/client/src/assets/images/home.png)
+
+
 Drag and drop an `.eml` or `.msg` file on to the upload area, or click it to open a file browser. Files up to 25 MB are accepted. Any other file type will be rejected with an error message.
 
 **Reading the results**
@@ -128,9 +131,18 @@ Once processed, the report is divided into the following panels:
 - **Content** — a spam score generated against the email body with any triggered spam rules listed
 - **Links** — all URLs extracted from the email body, each assessed for known threats
 
+![review-1](/client/src/assets/images/review-1.png)
+![review-2](/client/src/assets/images/review-2.png)
+![review-3](/client/src/assets/images/review-3.png)
+
+
 Hovering the question mark icon on any sender check displays a tooltip explaining what that check means.
 
+![tooltip](/client/src/assets/images/tooltip.png)
+
 **Disclaimer**
+
+![disclaimer](/client/src/assets/images/disclaimer.png)
 
 Click the **Disclaimer** button in the header at any time to read important information about the limitations of the tool and the scope of the developer's liability.
 
@@ -161,7 +173,7 @@ Upload (.eml / .msg)
                         └─► ValidationReport (JSON) → Frontend
 ```
 
-**API keys** are optional — the app degrades gracefully without them. Header authentication checks and Postmark spam scoring work out of the box. Add keys to `server/.env` to enable sender validation and URL threat scanning.
+**API keys** are optional — the app degrades gracefully without them. Header authentication checks and Postmark spam scoring work out of the box. Add keys to `server/.env` to enable sender validation and URL threat scanning, both API's are free to use with a reasonable daily limit for personal use.
 
 | Provider | Purpose | Key Required |
 |---|---|---|
@@ -177,7 +189,7 @@ Upload (.eml / .msg)
 <!-- TESTING -->
 ## Testing
 
-Tests are located in `frontend/src/tests`. Mock `.eml` and `.msg` files used in tests can be found in `frontend/src/mocks`.
+Tests are located in `frontend/src/tests`. 
 
 To run the frontend test suite, open a terminal in the `frontend` directory and run:
 
@@ -189,11 +201,9 @@ Tests are written using **Vitest** and **React Testing Library**.
 
 The current test suite covers:
 
-- Add the test coverage information
+- Unit tests for all components and their functions
+- Integrations tests where applicable
 
-- Acceptance of valid `.eml` files via the dropzone input
-- Acceptance of valid `.msg` files via the dropzone input
-- Rejection of invalid file types (e.g. `.txt`)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
