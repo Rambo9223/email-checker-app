@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response,NextFunction } from "express";
 import multer from "multer";
 import path from "path";
 import { parseEml } from "../parsers/emlParser";
@@ -17,10 +17,24 @@ const upload = multer({
   fileFilter: (_req, file, cb) => {
     const ext = path.extname(file.originalname).toLowerCase();
     if (ext === ".eml" || ext === ".msg") return cb(null, true);
-    cb(new Error("Only .eml and .msg files are accepted"));
+    // Pass false instead of an Error — silently rejects the file without
+    // crashing the stream. We handle the missing file response in the route
+    // handler below, which gives us a clean JSON 400 instead of ECONNRESET.
+    cb(null, true);
   },
 });
 
+/*
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 25 * 1024 * 1024 },
+  fileFilter: (_req, file, cb) => {
+    const ext = path.extname(file.originalname).toLowerCase();
+    if (ext === ".eml" || ext === ".msg") return cb(null, true);
+    cb(new Error("Only .eml and .msg files are accepted"));
+  },
+});
+*/
 // ─── Helper: strip raw Buffer before sending to client ───────────────────────
 
 function sanitiseForTransport(email: ParsedEmail): ValidationReport["parsedEmail"] {
@@ -39,6 +53,16 @@ export const emailRouter = Router();
  * Accepts a single .eml or .msg file upload (field name: "file").
  * Returns a full ValidationReport as JSON.
  */
+
+emailRouter.post(
+  "/check",
+  upload.single("file"),
+  async (req: Request, res: Response<EmailApiResponse>, next: NextFunction) => {
+    // No file at all — nothing attached
+    if (!req.file) {
+      return res.status(400).json({ success: false, error: "No file uploaded" });
+    }
+/*
 emailRouter.post(
   "/check",
   upload.single("file"),
@@ -47,8 +71,16 @@ emailRouter.post(
     if (!req.file) {
       return res.status(400).json({ success: false, error: "No file uploaded" });
     }
-
+*/
     const ext = path.extname(req.file.originalname).toLowerCase();
+
+     // File was attached but failed the fileFilter extension check
+    if (ext !== ".eml" && ext !== ".msg") {
+      return res
+        .status(400)
+        .json({ success: false, error: "Only .eml and .msg files are accepted" });
+    }
+
 
     try {
       // 1. Parse
@@ -80,6 +112,20 @@ emailRouter.post(
       };
 
       // 5. Compose report
+
+      const report: ValidationReport = {
+        parsedEmail: sanitiseForTransport(parsed),
+        checks: { auth: authChecks, sender: senderResult, content: contentResult, urls: urlResults },
+        summary,
+      };
+
+      return res.json({ success: true, data: report });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+      /*
       const report: ValidationReport = {
         parsedEmail: sanitiseForTransport(parsed),
         checks: {
@@ -101,7 +147,7 @@ emailRouter.post(
       });
     }
   }
-);
+);/*
 
 /**
  * GET /api/email/health

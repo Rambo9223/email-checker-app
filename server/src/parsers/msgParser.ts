@@ -34,8 +34,6 @@ export async function parseMsg(buffer: Buffer): Promise<ParsedEmail> {
   const fileData = reader.getFileData();
   
 
-  console.log(fileData)
-
   // check the filedata object as key/value pairs are potentially different, hence creating the un retrevable body
 
   if (!fileData) {
