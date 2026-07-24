@@ -30,7 +30,7 @@ describe("Index Tests & Routes",()=>{
     it("POST /api/email/check without file throws error",async()=>{
         const response = await request(app).post("/api/email/check");
         expect(response.status).toEqual(400);
-        expect(response.body).toEqual({ success: false, error: "No file uploaded" })
+        expect(response.body).toEqual({ success: false, error: "No file uploaded" });
     });
 
     it("POST /api/email/check accepts .msg",async()=>{
@@ -53,5 +53,5 @@ describe("Index Tests & Routes",()=>{
         expect(response.status).toEqual(400);
         expect(response.body).toEqual({ success: false, error: "Only .eml and .msg files are accepted" });
 
-    })
+    });
 })

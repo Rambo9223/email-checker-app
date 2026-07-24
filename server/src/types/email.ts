@@ -21,7 +21,7 @@ export interface EmailAttachment {
 // Authentication / deliverability headers
 // ─────────────────────────────────────────────
 
-export type AuthResult = "pass" | "fail" | "softfail" | "neutral" | "none" | "permerror" | "temperror" | "unknown";
+export type AuthResult = "pass" | "fail" | "softfail" | "neutral" | "none" | "permerror" | "temperror" | "unknown" | string;
 
 export interface SpfResult {
   result: AuthResult;
@@ -103,7 +103,7 @@ export interface ParsedEmail {
   rawHeaders: Record<string, string | string[]>;
 
   // Source metadata
-  sourceFormat: "eml" | "msg";
+  sourceFormat: "eml" | "msg" | string;
   parsedAt: Date;
 }
 
